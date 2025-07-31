@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe | YumHunt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Recipes</a></h1>
+  </header>
+  <main class="recipe-detail">
+    <div id="recipeContainer"></div>
+  </main>
+
+  <script>
+    const recipe = JSON.parse(localStorage.getItem("selectedRecipe"));
+    const container = document.getElementById("recipeContainer");
+
+    if (recipe) {
+      container.innerHTML = `
+        <h2>${recipe.name}</h2>
+        <img src="${recipe.image}" alt="${recipe.name}" />
+        <h3>Ingredients</h3>
+        <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+        <h3>How to Make</h3>
+        <ol>${recipe.method.map(m => `<li>${m}</li>`).join('')}</ol>
+      `;
+    } else {
+      container.innerHTML = "<p>No recipe selected.</p>";
+    }
+  </script>
+  <h3 align="center" >
+    <a href="index.html" style="color:#4d572d;">Back to Homepage</a><br><br>
+  </h3>
+</body>
+</html>

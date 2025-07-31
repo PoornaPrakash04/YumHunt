@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YumHunt | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>YumHunt</h1>
+    <div class="auth-buttons">
+      <button onclick="showLogin()">Login</button>
+      <button onclick="showSignup()">Sign Up</button>
+    </div>
+  </header>
+  <div class="page container">
+  <nav>
+    <button onclick="filterCategory('All')">All</button>
+    <button onclick="filterCategory('Desserts')">Desserts</button>
+    <button onclick="filterCategory('Drinks')">Drinks</button>
+    <button onclick="filterCategory('Diet Foods')">Diet Foods</button>
+    <button onclick="filterCategory('Snacks')">Snacks</button>
+    <button onclick="filterCategory('Main Course')">Main Course</button>
+  </nav>
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search recipes..." oninput="searchRecipes()" />
+  <span class="clear-btn" onclick="clearSearch()">×</span>
+  
+</div>
+
+  <main id="card-container"></main>
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 align="center">Login</h2><br><br>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+    </div>
+  </div>
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 align="center">Sign Up</h2><br><br>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email or Phone" />
+      <input type="password" placeholder="Password" />
+      <button>Sign Up</button>
+    </div>
+  </div>
+  <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 YumHunt, Inc.</p>
+    <p>Made with 🍴 by Team YumHunt</p>
+  </div>
+</footer>
+</div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="search.js"></script>
+
+</body>
+</html>
